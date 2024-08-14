@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply scroll-smooth box-border md:text-lg;
+}
+
+a {
+    @apply hover:text-primary;
+}
+
+#btnMenu.change div:nth-child(1) {
+    @apply translate-y-3 -rotate-45;
+}
+
+#btnMenu.change div:nth-child(2) {
+    @apply opacity-0;
+}
+
+#btnMenu.change div:nth-child(3) {
+    @apply -translate-y-3 rotate-45;
+}
+
+.accordion-panel.active {
+    @apply block;
+}
+
+.accordion-panel {
+    @apply hidden;
+}
+
+#tokoh .active p {
+    @apply bg-primary text-white rounded-full;
+}
