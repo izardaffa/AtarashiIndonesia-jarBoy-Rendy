@@ -682,6 +682,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.ms-4 {
+  margin-inline-start: 1rem;
+}
+
 .ms-8 {
   margin-inline-start: 2rem;
 }
@@ -781,6 +785,10 @@ video {
 
 .max-w-\[60rem\] {
   max-width: 60rem;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
 }
 
 .basis-1\/3 {
@@ -982,6 +990,10 @@ video {
   text-align: justify;
 }
 
+.align-top {
+  vertical-align: top;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1010,6 +1022,11 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-bold {
