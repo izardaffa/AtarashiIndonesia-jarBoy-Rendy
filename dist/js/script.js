@@ -44,7 +44,7 @@ for (let i = 0; i < tokoh.length; i++) {
 
     const img = document.createElement('img')
     img.classList.add('w-40', 'h-40', 'object-cover', 'object-center', 'm-4', 'border-4', 'border-primary', 'rounded-full', 'group-hover:-translate-y-6')
-    img.src = `/dist/img/${tokoh[i].img}`
+    img.src = `./dist/img/${tokoh[i].img}`
     img.alt = `Foto ${tokoh[i].nama}`
 
     const p = document.createElement('p')
@@ -66,7 +66,7 @@ for (let i = 0; i < tokohLink.length; i++) {
         }
         tokohLink[i].classList.add('active')
 
-        document.querySelector('#tokohPanel img').src = `/dist/img/${tokoh[i].img}`
+        document.querySelector('#tokohPanel img').src = `./dist/img/${tokoh[i].img}`
         document.querySelector('#tokohPanel #nama').innerText = tokoh[i].nama
         document.querySelector('#tokohPanel #lahir').innerText = tokoh[i].lahir
         document.querySelector('#tokohPanel #meninggal').innerText = tokoh[i].meninggal
@@ -111,7 +111,7 @@ pauseBGM.addEventListener('click', (e) => {
 })
 
 window.addEventListener('load', () => {
-    document.querySelector('#tokohPanel img').src = `/dist/img/${tokoh[0].img}`
+    document.querySelector('#tokohPanel img').src = `./dist/img/${tokoh[0].img}`
     document.querySelector('#tokohPanel #nama').innerText = tokoh[0].nama
     document.querySelector('#tokohPanel #lahir').innerText = tokoh[0].lahir
     document.querySelector('#tokohPanel #meninggal').innerText = tokoh[0].meninggal
