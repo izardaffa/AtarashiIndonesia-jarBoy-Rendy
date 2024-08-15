@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sejarah Proklamasi</title>
+    <link rel="shortcut icon" type="image/png" href="/dist/img/favicon.png"/>
     <link rel="stylesheet" href="/dist/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
-<!-- <body class="min-h-[200vh] bg-fixed bg-center bg-no-repeat bg-cover bg-[url('/dist/img/bg-0-top.jpg')]"> -->
-<body class="min-h-[200vh]">
+<body>
+    <div class="w-screen h-screen fixed -z-10 flex justify-center items-center opacity-50">
+        <img src="/dist/img/bg-1.jpg" alt="Background Image" class="w-[90%] h-[90%] max-md:w-[80%] max-md:h-[80%] object-cover object-center">
+    </div>
+
     <!-- S:Navbar -->
     <nav class="fixed max-md:-top-full duration-700 z-40 w-full shadow backdrop-blur max-md:h-full">
         <div class="container flex justify-between items-center py-4 max-md:flex-col">
             <div class="text-center">
-                <a href="#" class="text-lg block">
+                <a href="/" class="text-lg block">
                     <img src="/dist/img/hut-logo.png" alt="Logo" class="w-40 m-auto">
                 </a>
             </div>
             <div class="text-center md:flex md:gap-8">
                 <!-- <a href="#top" class="text-lg my-8 md:my-4 block">Top</a> -->
                 <div class="group">
-                    <a href="#sejarah" class="text-lg my-8 md:my-4 block">Sejarah <i class="fa-solid fa-angle-down group-hover:rotate-180"></i></a>
-                    <div id="myDropdown" class="md:bg-slate-50 md:rounded md:shadow md:px-4 md:py-1 md:absolute hidden group-hover:block">
-                        <a href="#chapter-1" class="text-lg my-8 md:my-4 block">Chapter 1</a>
-                        <a href="#chapter-2" class="text-lg my-8 md:my-4 block">Chapter 2</a>
-                        <a href="#chapter-3" class="text-lg my-8 md:my-4 block">Chapter 3</a>
+                    <a href="#sejarah" class="text-lg my-8 md:my-4 block"><i class="fa-solid fa-monument"></i> Sejarah <i class="fa-solid fa-angle-down group-hover:rotate-180"></i></a>
+                    <div id="myDropdown" class="md:bg-slate-50 md:rounded md:shadow md:px-4 md:py-1 md:absolute hidden group-hover:block md:text-start md:max-w-[20rem]">
+                        <a href="#chapter-1" class="text-lg md:text-sm my-8 md:my-4 block">Chapter 1: Pertemuan di Dalat</a>
+                        <a href="#chapter-2" class="text-lg md:text-sm my-8 md:my-4 block">Chapter 2: Pertemuan Soekarno/Hatta dengan Jenderal Mayor Nishimura dan Laksamana Muda Maeda</a>
+                        <a href="#chapter-3" class="text-lg md:text-sm my-8 md:my-4 block">Chapter 3: Peristiwa Rengasdengklok</a>
                     </div>
                 </div>
-                <a href="#tokoh" class="text-lg my-8 md:my-4 block">Tokoh</a>
-                <a href="#proklamasi" class="text-lg my-8 md:my-4 block">Proklamasi</a>
+                <a href="#tokoh" class="text-lg my-8 md:my-4 block"><i class="fa-solid fa-people-group"></i> Tokoh</a>
+                <a href="#proklamasi" class="text-lg my-8 md:my-4 block"><i class="fa-solid fa-scroll"></i> Proklamasi</a>
                 <div>
-                    <a href="#" class="text-lg my-8 md:my-4 block">
+                    <a href="#" class="text-lg my-8 md:my-4 block" id="playBGM">
                         <i class="fa-solid fa-volume-xmark"></i>
-                        <audio src="/dist/audio/proklamasi.mp3"></audio>
                     </a>
+                    <a href="#" class="text-lg my-8 md:my-4 hidden" id="pauseBGM">
+                        <i class="fa-solid fa-volume-low"></i>
+                    </a>
+                    <audio src="/dist/audio/hari-merdeka.mp3" id="bgm"></audio>
                 </div>
             </div>
         </div>
@@ -55,101 +62,116 @@
     <!-- S:Top -->
     <div id="top" class="bg-slate-50 bg-opacity-40">
         <div class="container flex flex-col justify-center content-center min-h-screen p-16">
-            <img src="/dist/img/hut-logo.png" alt="Logo HUT 79" class="block w-80 m-auto">
+            <img src="/dist/img/hut-logo.png" alt="Logo HUT 79" class="block w-60 m-auto">
 
-            <a href="#sejarah" class="hidden m-auto mb-0 bg-primary text-white rounded-full px-4 py-2 border border-primary hover:bg-white animate-bounce max-md:block w-[3rem] h-[3rem] text-xl">
+            <a href="#sejarah" class="hidden m-auto mb-8 bg-primary text-white rounded-full px-4 py-2 border border-primary hover:bg-white animate-bounce max-md:flex justify-center items-center w-[3rem] h-[3rem] text-xl">
                 <i class="fa-solid fa-arrow-down"></i>
             </a>
 
             <div class="flex justify-between items-center w-full border-y p-4 max-md:hidden">
                 <div class="group relative my-4">
-                    <a href="#sejarah" class="text-xl">Sejarah <i class="fa-solid fa-angle-up group-hover:rotate-180"></i></a>
-                    <div id="myDropdown" class="bg-slate-50 rounded shadow px-4 py-1 absolute bottom-full hidden w-max group-hover:block">
-                        <a href="#chapter-1" class="text-lg my-4 block">Chapter 1</a>
-                        <a href="#chapter-2" class="text-lg my-4 block">Chapter 2</a>
-                        <a href="#chapter-3" class="text-lg my-4 block">Chapter 3</a>
+                    <a href="#sejarah" class="text-xl"><i class="fa-solid fa-monument"></i> Sejarah <i class="fa-solid fa-angle-up group-hover:rotate-180"></i></a>
+                    <div id="myDropdown" class="bg-slate-50 rounded shadow px-4 py-1 absolute bottom-full hidden w-max max-w-[20rem] group-hover:block">
+                        <a href="#chapter-1" class="text-sm my-4 block">Chapter 1: Pertemuan di Dalat</a>
+                        <a href="#chapter-2" class="text-sm my-4 block">Chapter 2: Pertemuan Soekarno/Hatta dengan Jenderal Mayor Nishimura dan Laksamana Muda Maeda</a>
+                        <a href="#chapter-3" class="text-sm my-4 block">Chapter 3: Peristiwa Rengasdengklok</a>
                     </div>
                 </div>
-                <a href="#tokoh" class="text-xl my-4">Tokoh</a>
-                <a href="#proklamasi" class="text-xl my-4">Proklamasi</a>
+                <a href="#tokoh" class="text-xl my-4"><i class="fa-solid fa-people-group"></i> Tokoh</a>
+                <a href="#proklamasi" class="text-xl my-4"><i class="fa-solid fa-scroll"></i> Proklamasi</a>
             </div>
         </div>
     </div>
     <!-- E:Top -->
 
     <!-- S:Sejarah -->
-    <div id="sejarah" class="bg-slate-50 bg-opacity-40 py-24">
+    <div id="sejarah" class="bg-slate-50 bg-opacity-40 py-16 max-md:py-8">
         <div class="container">
             <div class="text-center py-8">
                 <h1 class="mt-16 text-3xl md:text-5xl font-bold mb-4">Sejarah</h1>
-                <p class="m-auto max-w-[60rem] mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt asperiores velit maxime accusantium nostrum molestiae, accusamus ullam nobis sequi minus? Recusandae possimus non facere eaque nisi, harum quae architecto excepturi?</p>
+                <p class="m-auto max-w-[60rem] mb-4">
+                    Proklamasi Kemerdekaan Indonesia pada 17 Agustus 1945 adalah puncak dari perjuangan panjang bangsa Indonesia melawan penjajahan. Dalam kurun waktu yang penuh dengan perlawanan, diplomasi, dan pengorbanan, para pemimpin bangsa bekerja tanpa lelah untuk mengupayakan kebebasan tanah air. Setelah melalui berbagai peristiwa penting dan krisis yang menentukan, momentum kemerdekaan akhirnya tiba. Di bawah tekanan waktu dan kondisi yang mendesak, keputusan besar harus diambil dengan cepat dan tepat. Momen ini tidak hanya menjadi simbol kemenangan atas penindasan, tetapi juga awal dari sebuah perjalanan baru untuk membangun Indonesia sebagai negara yang merdeka, bersatu, dan berdaulat.
+                </p>
             </div>
             
             <div id="chapter-1" class="accordion flex justify-between items-center w-full text-2xl py-8">
-                <h2>Chapter 1: Lorem ipsum dolor sit.</h2>
+                <h2>Chapter 1: Pertemuan di Dalat</h2>
                 <hr class="basis-[60%] border-slate-900">
                 <p class="rotate-45"><i class="fa-solid fa-plus"></i></p>
             </div>
 
             <div class="accordion-panel active">
-                <div class="md:container flex items-center max-md:flex-col">
+                <div class="md:container flex gap-8 items-center max-md:flex-col">
                     <div class="basis-1/3">
-                        <img src="#" alt="Gambar">
+                        <img src="/dist/img/sejarah-1.jpg" alt="Pertemuan di Dalat">
                     </div>
 
                     <div class="basis-2/3 text-justify">
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
+                        <p class="mb-4">Setelah Jepang semakin terpojok karena dua kota terbesarnya sudah di bom oleh Amerika Serikat dan pada tanggal 14 Agustus 1945 Jepang menyerah kepada sekutu.</p>
+                        <p class="mb-4">Dua hari sebelum Jepang menyerah kepada sekutu atau tepatnya pada tanggal 12 Agustus 1945, tiga tokoh nasional, yang terdiri dari Dr. Radjiman Wedyodiningrat, Ir. Soekarno, dan Drs. Mohammad Hatta memenuhi undangan dari Jenderal Terauchi di Dalat (Vietnam Selatan). Jenderal Terauchi merupakan Panglima tentara besar tentara Jepang di Asia Tenggara.</p>
+                        <p class="mb-4">Pada pertemuan yang terjadi di Dalat antara tiga tokoh nasional dan Jenderal Terauchi ada beberapa hal yang disampaikan oleh Jenderal Terauchi, adapun beberapa hal yang disampaikan sebagai berikut.</p>
+                        <ul class="list-disc ms-8">
+                            <li class="mb-4">Pemerintah Jepang memutuskan untuk memberikan kemerdekaan bagi bangsa Indonesia.</li>
+                            <li class="mb-4">Untuk melaksanakan kemerdekaan maka dibentuk Panitia Persatuan Kemerdekaan Indonesia (PPKI).</li>
+                            <li class="mb-4">Pelaksanaan kemerdekaan secepat mungkin akan dilaksanakan setelah semua persiapan selesai dilakukan dan secara berangsur-angsur dari Pulau Jawa kemudian disusul pulau-pulau lainnya.</li>
+                            <li class="mb-4">Wilayah Indonesia akan meliputi seluruh bekas wilayah Hindia-Belanda.</li>
+                        </ul>
+                        <p class="mb-4">Pertemuan yang terjadi di Dalat seharusnya menjadi sebuah momentum atau kesempatan Indonesia untuk merdeka. Namun, pada pertemuan yang terjadi di Dalat itu terjadi perbedaan pendapat antara tokoh golongan tua dan golongan muda. Hingga pada akhirnya perdebatan yang terjadi mendapatkan titik temu.</p>
                     </div>
                 </div>
             </div>
             
             <div id="chapter-2" class="accordion flex justify-between items-center w-full text-2xl py-8">
-                <h2>Chapter 2: Lorem ipsum dolor sit.</h2>
+                <h2>Chapter 2: Pertemuan Soekarno/Hatta dengan Jenderal Mayor Nishimura dan Laksamana Muda Maeda</h2>
                 <hr class="basis-[60%] border-slate-900">
                 <p><i class="fa-solid fa-plus"></i></p>
             </div>
 
             <div class="accordion-panel">
-                <div class="md:container flex items-center max-md:flex-col">
+                <div class="md:container flex gap-8 flex-row-reverse items-center max-md:flex-col">
                     <div class="basis-1/3">
-                        <img src="#" alt="Gambar">
+                        <img src="/dist/img/sejarah-2.jpg" alt="Jendral Nishimura">
+                        <img src="/dist/img/sejarah-3.jpg" alt="Laksamana Maeda">
                     </div>
 
                     <div class="basis-2/3 text-justify">
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
+                        <p class="mb-4">Soekarno dan Mohammad Hatta kembali ke Jakarta setelah semua urusan di Dalat selesai. Meskipun Soekarno dan Mohammad Hatta diantar oleh Laksamana Muda Tadashi Maeda untuk menemui Mayor Jenderal Moichiro Yamamoto, Kepala Staf Tentara XVI (Angkatan Darat) yang menjadi Kepala pemerintahan militer Jepang (Gunseikan) di Hindia Belanda.</p>
+                        <p class="mb-4">Sebagai salah satu sosok tokoh kemerdekaan, Mohammad Hatta telah banyak membuat karya bagi bangsa Indonesia yang dirangkum dalam buku Karya Lengkap Bung Hatta Buku 2;Kemerdekaan Dan Demokrasi.</p>
+                        <p class="mb-4">Namun, Mayor Jenderal Moichiro Yamamoto tidak ingin menerima Soekarno dan Mohammad Hatta dan segera memberikan perintah kepada Mayor Jenderal Otoshi Nishimura, Kepala Departemen Urusan Umum pemerintahan militer Jepang untuk menerima kedatangan rombongan itu.</p>
+                        <p class="mb-4">Ketika menerima pertemuan dengan rombongan itu, Nishimura mengungkapkan bahwa sejak siang hari pada 16 Agustus 1945 telah menerima perintah dari Tokyo bahwa Jepang harus menjaga status quo sehingga tidak bisa memberikan kemerdekaan kepada Indonesia.</p>
+                        <p class="mb-4">Padahal saat bertemu Marsekal Terauchi di Dalat, ia sudah menjanjikan kemerdekaan untuk Indonesia sehingga Soekarno dan Hatta merasa kecewa. Pada akhirnya, Soekarno dan Hatta meminta kepada Nishimura supaya tidak menghalangi kerja PPKI.</p>
+                        <p class="mb-4">Setelah pulang dari rumah Nishimura, Soekarno dan Hatta pergi ke rumah Laksamana Maeda yang diiringi oleh Miyoshi untuk melakukan rapat mempersiapkan teks Proklamasi. Penyusunan teks Proklamasi dilakukan oleh Soekarno. Mohammad Hatta, Achmad Soebardjo serta disaksikan oleh Sukarni, B.M. Diah Sudiro (Mbah), dan Sayuti Melik.</p>
+                        <p class="mb-4">Pada saat merancang teks Proklamasi, tiba-tiba Shigetada Nishijima seolah-olah mencampuri penyusunan teks Proklamasi dengan memberikan saran agar pemindahan kekuasaan itu hanya berarti kekuasaan administratif.</p>
+                        <p class="mb-4">Berkaitan dengan pendapat Nishijima, Soekarno, Mohammad Hatta, Ahmad Soebardjo, B. M. Diah, Sukarni, Sudiro, dan Sayuti Melik mereka semua tidak setuju dengan pendapat Nishijima, tetapi di beberapa kalangan pendapa Nishijima masih diagungkan.</p>
+                        <p class="mb-4">Setelah semua konsep telah disepakati, maka Sayuti Melik menyalin teks dan mengetik naskah di mesin ketik milik Mayor (Laut) Dr. Hermann Kandeler yang diambil dari kantor perwakilan AL Jerman.</p>
+                        <p class="mb-4">Pada awalnya, pembacaan Proklamasi akan dilaksanakan di lapangan Ikada, tetapi karena alasan keamanan kemudian pelaksanaan pembacaan Proklamasi dipindahkan ke kediaman Presiden Soekarno di Jalan Pegangsaan Timur, Nomor 56.</p>
                     </div>
                 </div>
             </div>
             
             <div id="chapter-3" class="accordion flex justify-between items-center w-full text-2xl py-8">
-                <h2>Chapter 3: Lorem ipsum dolor sit.</h2>
+                <h2>Chapter 3: Peristiwa Rengasdengklok</h2>
                 <hr class="basis-[60%] border-slate-900">
                 <p><i class="fa-solid fa-plus"></i></p>
             </div>
 
             <div class="accordion-panel">
-                <div class="md:container flex items-center max-md:flex-col">
+                <div class="md:container flex gap-8 items-center max-md:flex-col">
                     <div class="basis-1/3">
-                        <img src="#" alt="Gambar">
+                        <img src="/dist/img/sejarah-4.jpg" alt="Peristiwa Rengasdengklok">
+                        <img src="/dist/img/sejarah-5.jpg" alt="Pembacaan Naskah Proklamasi">
                     </div>
 
                     <div class="basis-2/3 text-justify">
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
-                        <p class="mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                        </p>
+                        <p class="mb-4">Pada awalnya peristiwa pemboman kota Hirosima dan Nagasaki disembunyikan agar tidak ada yang tahu, tetapi pada akhirnya peristiwa tersebut terdengar sampai ke telinga para pemuda lewat siaran radio BBC di Bandung sehingga membuat mereka segera bergerak dan meminta Proklamasi Kemerdekaan Indonesia segera dikumandangkan.</p>
+                        <p class="mb-4">Para pemuda tersebut di bawah pimpinan Chaerul Saleh melakukan rapat dan rapat tersebut menghasilkan beberapa keputusan, yaitu kemerdekaan adalah hak rakyat Indonesia, Pemutusan hubungan dengan Jepang, dan Ir. Soekarno dan Mohammad Hatta diharapkan untuk segera membacakan Proklamasi Kemerdekaan.</p>
+                        <p class="mb-4">Setelah mendapatkan keputusan dari rapat yang diadakan, kemudian para pemuda tersebut mengirim utusan (Wikana dan Darwis) agar segera bertemu dengan Ir. Soekarno dan Mohammad Hatta untuk menyampaikan hasil rapat tersebut dan meminta Proklamasi Kemerdekaan segera dilaksanakan pada 16 Agustus 1945.</p>
+                        <p class="mb-4">Dengan alasan Jepang masih bersenjata lengkap dan memiliki tugas menjaga status quo maka gagasan para pemuda tersebut ditolak oleh golongan tua sehingga terjadi perbedaan pendapat.</p>
+                        <p class="mb-4">Wikana dan Darwis menyampaikan hasil laporan dari pembicaraan dengan Soekarno dan Mohammad Hatta kepada para pemuda yang sudah berkumpul di Asrama Menteng 31. Para pemuda yang berkumpul terdiri dari Chaerul Saleh, Yusuf Kunto, Surachmat, Johan Nur, Singgih, Mandani, Sutrisno, Sampun, Subadio, Kusnandar, Abdurrahman, dan Dr. Muwardi.</p>
+                        <p class="mb-4">Para pemuda tersebut merasa kecewa setelah mendengar hasil laporan tersebut sehingga membuat suasana rapat menjadi panas. Kemudian para pemuda tersebut membuat gagasan untuk mengamankan Soekarno dan Hatta untuk dengan cara keluar kota yang jauh. Untuk hal ini, para pemuda tersebut menyerahkan tugas ini kepada Syudanco Singgih dan kawan-kawan dari PETA Jakarta.</p>
+                        <p class="mb-4">Sukarni dan Yusuf Kunto mendampingi Syudanco Singgih dalam menjalankan tugasnya. Menurut Singgih, Rengasdengklok merupakan tempat yang tepat dan aman untuk Soekarno dan Hatta. Pada 16 Agustus 1945, Soekarno dan Mohammad Hatta dibawa ke Rengasdengklok. Saat di Rengasdengklok, para pemuda berusaha dengan keras supaya Soekarno dan Mohammad Hatta segera melaksanakan Proklamasi Kemerdekaan.</p>
+                        <p class="mb-4">Awalnya, Soekarno dan Mohammad Hatta tidak ingin melakukan Proklamasi Kemerdekaan. Namun, setelah melakukan perundingan dengan kelompok pemuda dan Ahmad Subardjo.</p>
+                        <p class="mb-4">Akhirnya, Soekarno dan Mohammad Hatta akan memproklamasikan kemerdekaan Indonesia pada tanggal 17 Agustus 1945 di Jakarta. Setelah selesai memproklamasikan kemerdekaan, sore harinya Soekarno dan Mohammad Hatta kembali ke Jakarta bersama Ahmad Subardjo dan Sudiro.</p>
                     </div>
                 </div>
             </div>
@@ -158,55 +180,33 @@
     <!-- E:Sejarah -->
 
     <!-- S:Tokoh -->
-    <div id="tokoh" class="bg-slate-50 bg-opacity-40 py-24">
+    <div id="tokoh" class="bg-slate-50 bg-opacity-40 py-16 max-md:py-8">
         <div class="container min-h-screen">
             <div class="text-center my-8">
                 <h1 class="mt-16 text-3xl md:text-5xl font-bold mb-4">Tokoh</h1>
-                <p class="m-auto max-w-[60rem] mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt asperiores velit maxime accusantium nostrum molestiae, accusamus ullam nobis sequi minus? Recusandae possimus non facere eaque nisi, harum quae architecto excepturi?</p>
+                <p class="m-auto max-w-[60rem] mb-4">
+                    Di balik momen bersejarah Proklamasi Kemerdekaan Indonesia, terdapat tokoh-tokoh besar yang berperan penting dalam perjuangan mewujudkan kemerdekaan. Dengan keberanian, kecerdasan, dan semangat nasionalisme yang tinggi, mereka menjadi pilar-pilar yang mempersatukan bangsa di tengah berbagai tantangan. Tokoh-tokoh ini bukan hanya sekadar pemimpin, tetapi juga simbol dari tekad dan harapan seluruh rakyat Indonesia. Melalui perjuangan panjang dan pengorbanan yang tiada henti, mereka menginspirasi lahirnya sebuah bangsa yang merdeka dan berdaulat. Inilah sosok-sosok yang menjadi motor penggerak di balik kemerdekaan Indonesia, yang namanya akan selalu dikenang dalam sejarah.
+                </p>
             </div>
 
-            <div class="overflow-auto whitespace-nowrap">
-                <div class="inline-block m-4 cursor-pointer group active">
-                    <img src="/dist/img/hut-logo.png" alt="Foto Tokoh Proklamasi" class="w-52 h-52 object-cover object-center m-4 border-4 border-primary rounded-full group-hover:-translate-y-6">
-                    <p class="text-center text-lg px-4 py-2">Nama Tokoh Proklamasi</p>
-                </div>
-                <div class="inline-block m-4 cursor-pointer group">
-                    <img src="/dist/img/hut-logo.png" alt="Foto Tokoh Proklamasi" class="w-52 h-52 object-cover object-center m-4 border-4 border-primary rounded-full group-hover:-translate-y-6">
-                    <p class="text-center text-lg px-4 py-2">Nama Tokoh Proklamasi</p>
-                </div>
-                <div class="inline-block m-4 cursor-pointer group">
-                    <img src="/dist/img/hut-logo.png" alt="Foto Tokoh Proklamasi" class="w-52 h-52 object-cover object-center m-4 border-4 border-primary rounded-full group-hover:-translate-y-6">
-                    <p class="text-center text-lg px-4 py-2">Nama Tokoh Proklamasi</p>
-                </div>
-                <div class="inline-block m-4 cursor-pointer group">
-                    <img src="/dist/img/hut-logo.png" alt="Foto Tokoh Proklamasi" class="w-52 h-52 object-cover object-center m-4 border-4 border-primary rounded-full group-hover:-translate-y-6">
-                    <p class="text-center text-lg px-4 py-2">Nama Tokoh Proklamasi</p>
-                </div>
-                <div class="inline-block m-4 cursor-pointer group">
-                    <img src="/dist/img/hut-logo.png" alt="Foto Tokoh Proklamasi" class="w-52 h-52 object-cover object-center m-4 border-4 border-primary rounded-full group-hover:-translate-y-6">
-                    <p class="text-center text-lg px-4 py-2">Nama Tokoh Proklamasi</p>
-                </div>
+            <div class="overflow-auto whitespace-nowrap" id="tokohGroup">
+                <!-- Generate Link Tokoh -->
             </div>
 
-            <div class="flex flex-row-reverse items-center gap-4 my-12 max-md:flex-col">
+            <div class="flex flex-row-reverse items-center gap-4 my-12 max-md:flex-col" id="tokohPanel">
                 <div class="basis-1/3">
-                    <div class="w-80 border m-auto my-4">
-                        <img src="/dist/img/hut-logo.png" alt="Potret Tokoh Proklamasi">
+                    <div class="w-52 border m-auto my-4">
+                        <img src="/dist/img/hut-logo.png" alt="Potret Tokoh Proklamasi" class="w-full">
                     </div>
                     <div class="m-auto w-max my-4 text-center">
-                        <p>Nama: <span>Nama Tokoh</span></p>
-                        <p>Lahir: <span>Tempat, DD MM YYYY</span></p>
-                        <p>Meninggal: <span>Tempat, DD MM YYYY</span></p>
+                        <p>Nama: <span id="nama">-</span></p>
+                        <p>Lahir: <span id="lahir">-</span></p>
+                        <p>Meninggal: <span id="meninggal">-</span></p>
                     </div>
                 </div>
                 <div class="basis-2/3 text-justify">
-                    <h1 class="mb-4 text-2xl">Cerita Singkat</h1>
-                    <p class="mb-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                    </p>
-                    <p class="mb-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque dolores esse provident modi omnis libero cupiditate, perspiciatis consequatur necessitatibus voluptatem amet error architecto minima ipsum vitae, at, optio quae. Quibusdam recusandae velit voluptatum repellat corrupti eligendi animi voluptates, laborum, alias repudiandae itaque, architecto facere praesentium? Eaque repellendus dolorum nulla inventore hic, libero numquam, atque accusamus pariatur, excepturi recusandae ad rem quibusdam debitis ea dicta? Quam id provident asperiores ab molestiae libero non recusandae eligendi necessitatibus nulla! Aut quis ut consectetur laborum modi? Laborum tenetur harum corrupti facere in distinctio mollitia, architecto velit? Ducimus quae nobis atque dignissimos fuga incidunt!
-                    </p>
+                    <h1 class="mb-4 text-2xl">Biografi Singkat</h1>
+                    <div id="panelBiografi"></div>
                 </div>
             </div>
         </div>
@@ -214,11 +214,13 @@
     <!-- E:Tokoh -->
 
     <!-- S:Proklamasi -->
-    <div id="proklamasi" class="bg-slate-50 bg-opacity-40 py-24">
+    <div id="proklamasi" class="bg-slate-50 bg-opacity-40 py-16 max-md:py-8">
         <div class="container min-h-screen">
             <div class="text-center my-8">
                 <h1 class="mt-16 text-3xl md:text-5xl font-bold mb-4">Proklamasi</h1>
-                <p class="m-auto max-w-[60rem] mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt asperiores velit maxime accusantium nostrum molestiae, accusamus ullam nobis sequi minus? Recusandae possimus non facere eaque nisi, harum quae architecto excepturi?</p>
+                <p class="m-auto max-w-[60rem] mb-4">
+                    Pada tanggal 17 Agustus 1945, di tengah gelombang semangat perjuangan dan di bawah bayang-bayang pendudukan asing, bangsa Indonesia akhirnya mencapai puncak perjuangan panjangnya untuk meraih kemerdekaan. Dengan tekad yang bulat dan keberanian yang tak tergoyahkan, para pemimpin bangsa berkumpul di sebuah rumah sederhana di Jalan Pegangsaan Timur No. 56, Jakarta. Di tengah keheningan pagi itu, Soekarno dan Hatta, atas nama seluruh rakyat Indonesia, mengumandangkan sebuah proklamasi yang mengubah arah sejarah bangsa. Proklamasi ini menandai lahirnya sebuah negara yang merdeka, berdaulat, dan berdiri di atas kakinya sendiri.
+                </p>
             </div>
 
             <div class="">
@@ -234,36 +236,39 @@
     <!-- S:Footer -->
     <footer id="footer" class="bg-slate-950 text-white py-16">
         <div class="container">
-            <div class="flex justify-around items-center">
-                <div>
-                    <h1 class="my-8 text-center text-2xl font-bold">Jump to:</h1>
+            <div class="flex justify-around items-center max-md:flex-col">
+                <div class="basis-1/5">
+                    <h1 class="my-4 text-center text-2xl font-bold">Jump to:</h1>
                     <div class="flex flex-col text-center">
-                        <a href="#sejarah" class="font-semibold">Sejarah</a>
-                        <a href="#tokoh" class="font-semibold">Tokoh</a>
-                        <a href="#proklamasi" class="font-semibold">Proklamasi</a>
+                        <a href="#sejarah" class="font-semibold my-1"><i class="fa-solid fa-monument"></i> Sejarah</a>
+                        <a href="#tokoh" class="font-semibold my-1"><i class="fa-solid fa-people-group"></i> Tokoh</a>
+                        <a href="#proklamasi" class="font-semibold my-1"><i class="fa-solid fa-scroll"></i> Proklamasi</a>
                     </div>
                 </div>
-
-                <div>
-                    <h1 class="my-8 text-center text-2xl font-bold">Made by:</h1>
-                    <div class="flex-col justify-between gap-4 mx-8">
-                        <div class="text-center max-md:text-start m-auto">
-                            <h1 class="font-semibold inline-block">Nizar</h1>
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <div class="basis-1/5">
+                    <h1 class="my-4 text-center text-2xl font-bold">Sumber:</h1>
+                    <div class="flex flex-col text-center">
+                        <a href="https://www.gramedia.com/" class="text-xs mb-2">Gramedia</a>
+                        <a href="https://id.wikipedia.org/" class="text-xs mb-2">Wikipedia</a>
+                    </div>
+                </div>
+                <div class="basis-3/5">
+                    <h1 class="my-4 text-center text-2xl font-bold">Made by:</h1>
+                    <div class="flex justify-between gap-4 mx-8 max-md:flex-col">
+                        <div class="text-center m-auto">
+                            <h1 class="font-semibold inline-block">Nizar Daffa Maulana</h1>
+                            <a href="https://github.com/izardaffa" class="block"><i class="fa-brands fa-github"></i> izardaffa</a>
+                            <a href="https://www.instagram.com/izardaffa_desu/" class="block"><i class="fa-brands fa-instagram"></i> @izardaffa_desu</a>
                         </div>
-                        <div class="text-center max-md:text-start m-auto">
-                            <h1 class="font-semibold inline-block">Rendi</h1>
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <div class="text-center m-auto">
+                            <h1 class="font-semibold inline-block">Rendi Windya Anggita</h1>
+                            <a href="https://github.com/iReen09" class="block"><i class="fa-brands fa-github"></i> iReen09</a>
+                            <a href="https://www.instagram.com/reeen9_/" class="block"><i class="fa-brands fa-instagram"></i> @reeen9_</a>
                         </div>
-                        <div class="text-center max-md:text-start m-auto">
-                            <h1 class="font-semibold inline-block">Faris</h1>
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <div class="text-center m-auto">
+                            <h1 class="font-semibold inline-block">M Faris</h1>
+                            <a href="https://github.com/muhamadfarissss" class="block"><i class="fa-brands fa-github"></i> muhamadfarissss</a>
+                            <a href="https://www.instagram.com/muhaamad.faris/" class="block"><i class="fa-brands fa-instagram"></i> @muhaamad.faris</a>
                         </div>
                     </div>
                 </div>
@@ -272,12 +277,13 @@
             <hr class="my-12 w-2/3 m-auto">
 
             <div class="text-center">
-                <p>Copyright &copy; 2024 Nama Tim</p>
+                <p>Copyright &copy; 2024 jarboy</p>
             </div>
         </div>
     </footer>
     <!-- E:Footer -->
 
+    <script src="/dist/js/biodata-tokoh.js"></script>
     <script src="/dist/js/script.js"></script>
 </body>
 </html>

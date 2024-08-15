@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    @apply scroll-smooth box-border md:text-lg;
+    @apply scroll-smooth box-border text-sm md:text-lg;
 }
 
 a {
